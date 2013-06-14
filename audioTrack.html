@@ -1,0 +1,34 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+    <body>
+        <div>TODO write content</div>
+        <button onclick="getFirstSeekableRange()" type="button">获得首个可寻址范围</button>
+        <audio id="demo" src="01.mp3" controls  >
+            <p>Your browser does not support the audio element </p>
+        </audio>
+        <script type="text/javascript">
+            window.onload = function() {
+//                alert("window onload");
+                myVid = document.getElementById("demo");
+//                 alert(myVid.audioTracks);
+//                 alert(myVid.audioTracks.length);
+                myVid.currentTime = 50;
+                myVid.duration = 60;
+                myVid.play();
+            };
+
+function getFirstSeekableRange()
+  { 
+  alert("Start: " + myVid.seekable.start(0) + " End: "  + myVid.seekable.end(0));
+  } 
+        </script>
+    </body>
+</html>

@@ -1,0 +1,54 @@
+<?php
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+require_once 'include/mp3file.php';
+$dir = 'audio';
+$files1 = scandir($dir);
+//$files2 = scandir($dir, 1);
+//print_r($files1);
+//print_r($files2);
+//handle mp3 file
+//$f = '01.mp3';
+//$f = 'audio/cq1.mp3';
+$mark = 0;
+$slience_mark = array();
+
+for ($i = 4; $i < count($files1); $i++) {
+    $f[$i] = 'audio/' . $files1[$i];
+    $m = new mp3file($f[$i]);
+    $a[$i] = $m->get_metadata();
+
+
+    if ($a[$i]['Encoding'] == 'Unknown')
+        echo "?";
+    else if ($a[$i]['Encoding'] == 'VBR')
+        print_r($a);
+    else if ($a[$i]['Encoding'] == 'CBR')
+        print_r($a[$i]);
+    echo '<br />';
+//    echo $a[$i]['Length mm:ss'];
+    $mark += intval($a[$i]['Length']);
+    $slience_mark[] = $mark;
+
+    echo '<br />';
+//    echo(date("i:s", $mark) . "<br />");
+    unset($a);
+}
+//print_r($slience_mark);
+//foreach ($slience_mark as $value) {
+//    $mark_place = 
+//    
+//}
+?>
+<?php
+for ($i = 0; $i < count($slience_mark); $i++) {
+    ?>
+    <audio src="audio/cq1.mp3#t=<?php echo $slience_mark[$i] ?>,<?php echo $slience_mark[$i + 1] ?>"  controls >
+        audio is not supported.
+    </audio>
+    <?php
+    echo $i.'<br />';
+}
+?>

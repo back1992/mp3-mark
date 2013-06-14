@@ -1,0 +1,53 @@
+<!DOCTYPE html> 
+<html> 
+<!--    <head>
+        <script type="text/javascript">
+            onload = function() {
+                document.getelementbyid('demo').play;
+            }
+        </script>
+    </head>-->
+    <body> 
+
+        <button onclick="getCurTime();" type="button">获得当前时间的位置</button>
+        <button onclick="setCurTime();" type="button">把时间位置设置为 50 秒</button>
+        <br />
+        <br />
+        <!--        <audio id="demo" src="01.mp3" controls autoplay loop>-->
+        <audio id="demo" src="01.mp3" controls  loop>
+            <p>Your browser does not support the audio element </p>
+        </audio>
+
+        <script>
+            window.onload = function() {
+                alert("window onload");
+                myVid = document.getElementById("demo");
+                myVid.currentTime = 50;
+                myVid.duration = 10;
+                myVid.play();
+            };
+            myVid = document.getElementById("demo");
+            function getCurTime()
+            {
+                alert(myVid.currentTime);
+            }
+            function setCurTime()
+            {
+                myVid.currentTime = 50;
+            }
+        </script> 
+        
+        
+
+<!--        <script type="text/javascript">
+            function load()
+            {
+                myVid = document.getElementById("demo");
+                myVid.currentTime = 50;
+                myVid.duration = 10;
+                myVid.play();
+            }
+        </script>-->
+
+    </body> 
+</html>

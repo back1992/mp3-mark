@@ -1,0 +1,31 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <script src="Md.js" type="text/javascript"></script>
+    </head>
+    <body>
+        <div>TODO write content</div>
+        <!--<audio src="01.mp3#t=30,40" autoplay controls id="audio1">-->
+        <audio src="audio/cq1.mp3#t=30,40" autoplay controls id="audio1">
+            audio is not supported.
+        </audio>
+        <div>
+            <input type="button" id="btnPlay" value="Play" onclick="PlayNow()" />
+            <input type="button" id="btnPause" value="Pause" onclick="PauseNow()" />
+            <input type="button" id="btnMute" value="Mute" onclick="MuteNow()" />
+            <br />
+            Volume :<input type="range" min="0" max="1" step="0.1" id="volume" 
+                           onchange="ChangeVolume()">
+            <br />
+            Time lapsed:<input type="range" step="any" id="seekbar" 
+                               onchange="ChangeTheTime()"><label id="lblTime">-:--:--</label>
+
+        </div>
+    </body>
+</html>
